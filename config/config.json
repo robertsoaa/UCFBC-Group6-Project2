@@ -2,7 +2,8 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "exampledb",
+    "port": 8889,
+    "database": "sequelize_passport",
     "host": "localhost",
     "dialect": "mysql",
     "operatorsAliases": false
