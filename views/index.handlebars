@@ -12,13 +12,13 @@
 
         <!-- Button trigger for Admin login modal -->
         <button type="button" class="btn ctrbtns btn-primary" id="adminlogin" data-toggle="modal" data-target="#adminloginModal">
-          ADMIN LOGIN
+          ADMINISTRATOR LOGIN
         </button>
-
-        <!-- Button trigger for new Admin account ...this section will need a data-target-->
-        <button type="button" class="btn ctrbtns btn-secondary" id="requestaccount" data-toggle="modal" data-target="">
+        <!-- Button trigger for new Admin account modal...this section will need a data-target-->
+        <button type="button" class="btn ctrbtns btn-secondary" id="requestaccount" data-toggle="modal" data-target="#acctRequestModal">
           REQUEST NEW ACCOUNT
         </button>
+
 
         <!-- Admin Login Modal -->
         <div class="modal fade" id="adminloginModal" tabindex="-1" role="dialog" aria-labelledby="adminloginModalLabel" aria-hidden="ture">
@@ -38,7 +38,6 @@
                   <input class="text" name="email" type="text" />
                   <label for="password">Password: </label>
                   <input name="password" type="password" />
-
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>
@@ -49,10 +48,53 @@
             </div>
           </div>
         </div>
+
+        <!-- Admin New Account Request Modal -->
+        <div class="modal fade" id="acctRequestModal" tabindex="-1" role="dialog" aria-labelledby="acctRequestModalLabel" aria-hidden="ture">
+          <div class="modal-dialog-centered modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title" id="acctRequestModalLabel" text-align="center">Enter account information below to request a new account </h5>
+
+              </div>
+              <div class="modal-body">
+                <!-- Form Control for New Admin Account Request -->
+                <form id="newacct" name="newacct" method="post" action="newacct">
+                  <table>
+                    <tr>
+                      <td><label for="fname">Enter First Name:</label></td>
+                      <td><input class="text" name="fname" type="text" /></td>
+                    </tr>
+                    <tr>
+                      <td><label for="lname">Enter Last Name:</label></td>
+                      <td><input class="text" name="lname" type="text" /></td>
+                    </tr>
+                    <tr><td><center>Email Address will be used as USER ID</center></td></tr>
+                    <tr>
+                      <td><label for="email">Enter Valid Email Address:</label></td>
+                      <td><input class="text" name="email" type="text" /></td>
+                    </tr>
+                    <tr>
+                      <td><label for="password">Enter Valid Password:</label></td>
+                      <td><input name="password" type="password" /></td>
+                    </tr>
+                  </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>
+                <!-- Submit button for New Admin Account Request -->
+                <input class="btn" type="submit" value="SUBMIT" />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/js/index.js"></script>
