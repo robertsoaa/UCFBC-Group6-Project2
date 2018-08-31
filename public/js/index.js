@@ -3,6 +3,9 @@ var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
+//!!!not starter code!!!
+var $turntable1 = $("#turntable1-img");
+var audio = new Audio("../music/bassdrop.wav");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -93,7 +96,15 @@ var handleDeleteBtnClick = function() {
     refreshExamples();
   });
 };
+// handleSiteBtnClick is called when a user clicks the turntable image to access the site
+//!!!!! This is not starter code !!!!!!
+var handleSiteBtnClick = function() {
+  $("#turntable1-img").css("border-style", "inset");
+  audio.play();
+};
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+// Add event listener to depress image when clicked
+$turntable1.on("click", handleSiteBtnClick);
