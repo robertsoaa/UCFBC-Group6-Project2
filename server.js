@@ -1,13 +1,42 @@
 require("dotenv").config();
+
 var express = require('express');
-var app = express();
+
 var passport   = require('passport');
 var session    = require('express-session');
+var db = require("./models");
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars')
-var db = require("./models");
+var app = express();
 var PORT = process.env.PORT || 3000;
 
+// Middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(express.static("public"));
+
+// Handlebars
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main"
+  })
+);
+
+app.set("view engine", "handlebars");
+
+//Routes
+var authRoute = require('./routes/auth.js')(app,passport);
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
+
+var syncOptions = { force: false };
+
+// If running a test, set syncOptions.force to true
+// clearing the `testdb`
+if (process.env.NODE_ENV === "test") {
+  syncOptions.force = true;
+}
 //For BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -27,6 +56,8 @@ app.get('/', function(req, res) {
     res.send('Welcome to Passport with Sequelize');
  
 });
+//load passport strategies
+require('./config/passport/passport.js')(passport, db.user);
 
 //Models
 //var models = require("./app/models");
@@ -41,23 +72,16 @@ app.get('/', function(req, res) {
 
 // Handlebars
 //app.set('views', './views');
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
-app.set("view engine", "handlebars");
+//app.engine(
+ // "handlebars",
+//  exphbs({
+//    defaultLayout: "main"
+//  })
+//);
+//app.set("view engine", "handlebars");
 
-//Routes
-var authRoute = require('./routes/auth.js')(app,passport);
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
 
-//var syncOptions = { force: false };
 
-//load passport strategies
-require('./config/passport/passport.js')(passport, db.user);
 
 //Sync Database
 // db.sequelize.sync().then(function() {
@@ -80,7 +104,7 @@ db.sequelize.sync().then(function() {
 
 });
 
-app.listen(5000, function(err) {
+app.listen(PORT, function(err) {
  
   if (!err)
       console.log(
@@ -113,10 +137,7 @@ app.listen(5000, function(err) {
 // var app = express();
 // var PORT = process.env.PORT || 3000;
 
-// Middleware
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
-// app.use(express.static("public"));
+
 
 // // Handlebars
 // app.engine(
