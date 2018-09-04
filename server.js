@@ -1,10 +1,13 @@
+// =================================================================
+// Dependencies
+// =================================================================
 require("dotenv").config();
 
-var express = require('express');
+const express = require('express');
 
+const session = require('express-session');
+const db = require("./models");
 var passport   = require('passport');
-var session    = require('express-session');
-var db = require("./models");
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars')
 var app = express();
@@ -24,6 +27,13 @@ app.engine(
 );
 
 app.set("view engine", "handlebars");
+// For Passport
+ 
+app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
+ 
+app.use(passport.initialize());
+ 
+app.use(passport.session()); // persistent login sessions
 
 //Routes
 var authRoute = require('./routes/auth.js')(app,passport);
@@ -41,13 +51,7 @@ if (process.env.NODE_ENV === "test") {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// For Passport
- 
-app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
- 
-app.use(passport.initialize());
- 
-app.use(passport.session()); // persistent login sessions
+
 
 var env = require('dotenv').load();
  

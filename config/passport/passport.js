@@ -35,7 +35,7 @@ module.exports = function (passport, user) {
 
             // deserialize user 
             passport.deserializeUser(function (id, done) {
-
+            
                 User.findById(id).then(function (user) {
 
                     if (user) {
@@ -53,7 +53,7 @@ module.exports = function (passport, user) {
             });
 
 
-
+            //run check to see if the user already exists
             User.findOne({
                 where: {
                     email: email
