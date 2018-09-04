@@ -1,10 +1,13 @@
+// =================================================================
+// Dependencies
+// =================================================================
 require("dotenv").config();
 
-var express = require('express');
+const express = require('express');
 
+const session = require('express-session');
+const db = require("./models");
 var passport   = require('passport');
-var session    = require('express-session');
-var db = require("./models");
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars')
 var app = express();
