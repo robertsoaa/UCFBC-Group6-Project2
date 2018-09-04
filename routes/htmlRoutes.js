@@ -8,6 +8,13 @@ module.exports = function(app) {
     });
   });
 
+  // Load index page
+  app.get("/index", function(req, res) {
+    res.render("index", {
+      msg: "its working"
+    });
+  });
+
   app.get("/admin", function(req, res) {
     res.render("admin", {
       msg: "admin route working"
