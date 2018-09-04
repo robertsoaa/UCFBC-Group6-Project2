@@ -2,14 +2,15 @@
   "development": {
     "username": "root",
     "password": "root",
-    "port": 8889,
-    "database": "sequelize_passport",
+    "port": 3306,
+    "database": "vinylrecords_db",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "operatorsAliases": false
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "root",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",

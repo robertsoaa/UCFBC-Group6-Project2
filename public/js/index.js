@@ -3,6 +3,11 @@ var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
+//!!!not starter code!!!
+var $turntable1 = $("#turntable1-img");
+var audio = new Audio("../music/bassdrop.wav");
+var $window = $(window);
+var $cookienotice = $("#cookienotice");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -93,7 +98,42 @@ var handleDeleteBtnClick = function() {
     refreshExamples();
   });
 };
+// handleSiteBtnEnter is called when a user enters the turntable image to access the site
+//!!!!! This is not starter code !!!!!!
+var handleSiteBtnEnter = function() {
+  $("#turntable1-img").css("border-style", "inset");
+  $("#turntable1-img").css("border-color", "yellow");
+  $("#turntable1-img").css("cursor", "pointer");
+  audio.loop = true;
+  audio.play();
+};
+// handleSiteBtnExit is called when a user exits the turntable image without clicking the image
+//!!!!! This is not starter code !!!!!!
+var handleSiteBtnExit = function() {
+  $("#turntable1-img").css("border-style", "outset");
+  $("#turntable1-img").css("border-color", "#218796");
+  audio.pause();
+};
+
+// handleSiteBtnExit is called when a user exits the turntable image without clicking the image
+//!!!!! This is not starter code !!!!!!
+var handleSiteBtnClick = function() {
+  console.log("exit function completed");
+};
+
+var handlecookieloader = function() {
+
+$('#cookienotice').modal('show')
+console.log("handle cookie ran")
+};
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+// Add event listener to depress image when clicked
+$turntable1.on("mouseover", handleSiteBtnEnter);
+$turntable1.on("mouseout", handleSiteBtnExit);
+$turntable1.on("click", handleSiteBtnClick);
+
+$window.on('load', handlecookieloader);
+

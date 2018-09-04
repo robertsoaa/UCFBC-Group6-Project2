@@ -1,24 +1,30 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+// =================================================================
+// Get all Vinyl Records
+// =================================================================
+  app.get("/api/vinylrecord", function(req, res) {
+    db.VinylRecord.findAll({}).then(function(dbVinylRecord) {
+      res.json(dbVinylRecord);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+// =================================================================
+// Create a new Vinyl Records
+// =================================================================  
+  app.post("/api/vinylrecord", function(req, res) {
+    db.VinylRecord.create(req.body).then(function(dbVinylRecord) {
+      res.json(dbVinylRecord);
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+// =================================================================
+// Delete a Vinyl Record by its ID
+// =================================================================
+  app.delete("/api/vinylrecord/:id", function(req, res) {
+    db.VinylRecord.destroy({ where: { id: req.params.id } }).then(function(dbVinylRecord) {
+      res.json(dbVinylRecord);
     });
   });
 };

@@ -3,19 +3,31 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
+    res.render("index", {
+      msg: "Welcome"
+    });
+  });
+
+  // Load index page
+  app.get("/index", function(req, res) {
+    res.render("index", {
+      msg: "its working"
+    });
+  });
+
+  app.get("/admin", function(req, res) {
+    res.render("admin", {
+      msg: "admin route working"
     });
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
+  app.get("/admin/:id", function(req, res) {
+    db.VinylRecord.findOne({ where: { id: req.params.id } }).then(function(
+      dbVinylRecord
+    ) {
+      res.render("admin", {
+        VinylRecord: dbVinylRecord
       });
     });
   });
