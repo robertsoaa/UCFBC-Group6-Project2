@@ -27,7 +27,7 @@ $.ajax({
 //        });
 // });
 
-$(".updateStock").on("click", function(){
+$(document).on("click",".updateStock", function(){
 
- alert("you clicked link with id: "+ $(".updateStock").getAttribute("id"));
+ console.log("you clicked link with id: "+ $(this).attr("id"));
 });
