@@ -71,3 +71,7 @@ footer {
   text-align: left;
   vertical-align: middle;
 }
+
+.navbar{
+  background-color: gray;
+}
