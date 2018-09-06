@@ -13,6 +13,8 @@ var exphbs = require('express-handlebars')
 var app = express();
 var PORT = process.env.PORT || 3000;
 
+//var seed = require("./controllers/inventorycontroller.js");
+
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -65,7 +67,15 @@ require('./config/passport/passport.js')(passport, db.user);
 
 db.sequelize.sync().then(function() {
  
-  console.log('Nice! Database looks fine')
+  console.log('Nice! Database looks fine');
+
+  db.inventory.findAll({}).then(function(res){
+    console.log("THIS IS RES:" + res);
+    if (res.length == 0){
+      console.log("The table was empty!")
+      var seed = require("./controllers/inventorycontroller.js");
+    }
+  })
 
 }).catch(function(err) {
 
