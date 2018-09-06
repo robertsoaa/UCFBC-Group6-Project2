@@ -4,8 +4,8 @@ module.exports = function(app) {
 // =================================================================
 // Get all Vinyl Records
 // =================================================================
-  app.get("/api/vinylrecord", function(req, res) {
-    db.VinylRecord.findAll({}).then(function(dbVinylRecord) {
+  app.get("/api/allInventory", function(req, res) {
+    db.inventory.findAll({}).then(function(dbVinylRecord) {
       res.json(dbVinylRecord);
     });
   });
