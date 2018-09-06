@@ -32,6 +32,34 @@ module.exports = function(app) {
     });
   });
 
+    // Load hiphop page
+  app.get("/hiphop", function(req, res) {
+    res.render("hiphop", {
+      msg: "its working"
+    });
+  });
+
+    // Load pop page
+  app.get("/pop", function(req, res) {
+    res.render("pop", {
+      msg: "its working"
+    });
+  });
+
+    // Load country page
+  app.get("/country", function(req, res) {
+    res.render("country", {
+      msg: "its working"
+    });
+  });
+
+    // Load rock page
+  app.get("/rock", function(req, res) {
+    res.render("rock", {
+      msg: "its working"
+    });
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");

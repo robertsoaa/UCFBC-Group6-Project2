@@ -73,5 +73,32 @@ footer {
 }
 
 .navbar{
-  background-color: gray;
+  padding-top: 20px;
+  background-color: black;
+  color: white;
+  opacity: .80;
+  font-size: 19px;
+}
+
+.inventoryTable {
+  text-align: center;
+  align-self: center;
+}
+
+th,td{
+  width: 200px;
+  size: 20px;
+  text-align: center;
+}
+
+td{
+  color: white;
+}
+
+.modal{
+  color: black;
+}
+
+.updateStock{
+color: black;
 }

@@ -25,13 +25,13 @@
 <br>
 <!-- Main section with table-->
 <div class="jumbotron">
-<h2>Store Inventory</h2>
+<h2>Store Inventory for Country Genre</h2>
 <table id="inventoryTable">
     <th>Artist</th>
     <th>Album</th>
     <th>Genre</th>
     <th>Price</th>
-    <th>Stock</th>
+
   <tbody>
   </tbody>
 </table>
@@ -41,22 +41,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<script src="/js/dashboard.js">   </script>
-{{!-- //    console.log("hello, we're inside the script");
-//     $.get("/api/allInventory", function(response){
-//         console.log("we're inside the get");
-//        var vinyl = response;
-//                //Important code starts here to populate table  
-//        var yourTableHTML = "";
-//            jQuery.each(vinyl, function(i, data) {
-//                $("#inventoryTable").append("<tr><td>" + data.artist + "</td><td>" + data.album + "</td><td>" + data.genre + "</td><td>$" + data.price + "</td><td></td> <td><button type='button'id="+data.id+" class ='updateStock'>Update Stock!</button></td></tr>");
-//            });
-//    });
-
-//  $(".updateStock").on("click", function(){
-
-//      alert("you clicked link with id: "+ $(".updateStock").getAttribute("id"));
-//  });
-    
-//  
-  --}}
+<script > 
+     $.get("/api/countryInventory",function(response){
+         console.log("we're inside the get");
+        var vinyl = response;
+                //Important code starts here to populate table  
+        var yourTableHTML = "";
+            jQuery.each(vinyl, function(i,data) {
+                $("#inventoryTable").append("<tr><td>" + data.artist + "</td><td>" + data.album + "</td><td>" + data.genre + "</td><td>$" + data.price + "</td><td><button type='button'id="+data.id+" class ='updateStock'>Buy</button></td></tr>");
+            });
+    });
+    </script>
+ 
