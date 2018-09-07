@@ -75,7 +75,6 @@ footer {
 .navbar{
   padding-top: 20px;
   background-color: black;
-  color: white;
   opacity: .80;
   font-size: 19px;
 }
@@ -92,7 +91,7 @@ th,td{
 }
 
 td{
-  color: white;
+  /* color: white; */
 }
 
 .modal{

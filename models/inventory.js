@@ -28,6 +28,11 @@ module.exports = function (sequelize, Sequelize) {
             field: 'price',
             notEmpty: true
         },
+        stock: {
+            type: Sequelize.INTEGER,
+            field: 'stock',
+            notEmpty: true
+        },
         status: {
             type: Sequelize.ENUM('active', 'inactive'),
             defaultValue: 'active'
@@ -36,4 +41,3 @@ module.exports = function (sequelize, Sequelize) {
     });
     return Inventory;
 };
-

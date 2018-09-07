@@ -47,6 +47,23 @@ app.get("/api/rockInventory", function(req, res) {
 });
 
 // =================================================================
+// Update a Vinyl Record by its ID
+// =================================================================
+app.put("/api/vinylStock/:id", function(req, res) {
+  console.log("inside PUT");
+  db.inventory.update({stock : req.body.stock},{
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(function(dbPost) {
+      res.render("dashboard");
+    });
+});
+
+
+
+// =================================================================
 // Create a new Vinyl Records
 // =================================================================  
   app.post("/api/vinylrecord", function(req, res) {
@@ -64,19 +81,5 @@ app.get("/api/rockInventory", function(req, res) {
     });
   });
 
-
-// =================================================================
-// Update a Vinyl Record by its ID
-// =================================================================
-app.put("/api/vinylStock/:id", function(req, res) {
-  db.Post.update({stock : req.body.stock,
-      where: {
-        id: req.body.id
-      }
-    })
-    .then(function(dbPost) {
-      res.json(dbPost);
-    });
-});
 
 };
