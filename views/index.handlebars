@@ -3,14 +3,13 @@
     <div class="row">
       <div class="col-8 offset-2">
         <div class="jumbotron">
-          <img src = "/img/logoNoBG.png" style="width:20%"  id="logo">
-          <h1>Bass Drop Vinyl Shop</h1>
-          <h2>Managing your inventory of Vinyl Records</h2>
-          <h3>{{msg}}</h3>
-          <h3>{{dbExample}}</h3>
+          <h1 id="title">Bass Drop Vinyl Shop</h1>
+          <img src="/img/logoNoBG.png" id="logo">
+
+        
         </div>
-        <img id="turntable1-img" class="turntable-buttons img-responsive" data-toggle="tooltip" title="Click to Enter Site" src="/img/turntable.gif"
-          alt="Click to Enter Site">
+        {{!-- <img id="turntable1-img" class="turntable-buttons img-responsive" data-toggle="tooltip" title="Click to Enter Site" src="/img/turntable.gif"
+          alt="Click to Enter Site"> --}}
 
         <!-- Button trigger for Admin login modal -->
         <button type="button" class="btn ctrbtns btn-primary" id="adminlogin" data-toggle="modal" data-target="#adminloginModal">
@@ -106,42 +105,43 @@
 
 
 
-      <!-- Cookie Warning Modal -->
-      <div class="modal fade" id="cookienotice" tabindex="-1" role="dialog" aria-labelledby="cookienoticeLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-        <div class="modal-dialog-centered modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-body">
-              <table>
-                <tr>
-                  <td>
-                    <div class="grid--cell mr12" aria-label="notice-message">
-                      <p class="mb0 lh-lg">
-                        This site uses cookies to deliver our services and to ensure your data is protected by applicable security features. By using our site, you acknowledge
-                        that you have read and understand our <a class="s-link s-link__inherit td-underline fc-white"
-                          target="_blank" href="">Cookie Policy,</a>
-                          <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="">Privacy
-                          Policy, </a> and our <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="">Terms
-                          of Service</a>. Your use of Bass Drop Vinyl Shop’s Products and Services, including the Bass Drop Vinyl
-                        Shop Network, is subject to these policies and terms.
-                      </p>
-                    </div>
-                  </td>
-                </tr>
-                <tr align="center">
-                  <td>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ACCEPT</button>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          
-            
-              
+        <!-- Cookie Warning Modal -->
+        <div class="modal fade" id="cookienotice" tabindex="-1" role="dialog" aria-labelledby="cookienoticeLabel" aria-hidden="true"
+          data-backdrop="static" data-keyboard="false">
+          <div class="modal-dialog-centered modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <table>
+                  <tr>
+                    <td>
+                      <div class="grid--cell mr12" aria-label="notice-message">
+                        <p class="mb0 lh-lg">
+                          This site uses cookies to deliver our services and to ensure your data is protected by applicable security features. By using
+                          our site, you acknowledge that you have read and understand our <a class="s-link s-link__inherit td-underline fc-white"
+                            target="_blank" href="">Cookie Policy,</a>
+                          <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="">Privacy Policy,
+                            </a> and our <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="">Terms
+                            of Service</a>. Your use of Bass Drop Vinyl Shop’s Products and Services, including the Bass
+                          Drop Vinyl Shop Network, is subject to these policies and terms.
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr align="center">
+                    <td>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">ACCEPT</button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+
+
             </div>
           </div>
         </div>
-     
-     
+
+
       </div>
     </div>
   </div>
@@ -151,7 +151,7 @@
 
 
 
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="/js/index.js"></script>
