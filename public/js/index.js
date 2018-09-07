@@ -4,7 +4,7 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 //!!!not starter code!!!
-var $turntable1 = $("#turntable1-img");
+var $turntable1 = $("#logo");
 var audio = new Audio("../music/bassdrop.wav");
 var $window = $(window);
 var $cookienotice = $("#cookienotice");
@@ -101,17 +101,17 @@ var handleDeleteBtnClick = function() {
 // handleSiteBtnEnter is called when a user enters the turntable image to access the site
 //!!!!! This is not starter code !!!!!!
 var handleSiteBtnEnter = function() {
-  $("#turntable1-img").css("border-style", "inset");
-  $("#turntable1-img").css("border-color", "yellow");
-  $("#turntable1-img").css("cursor", "pointer");
+  $("#logo").css("border-style", "inset");
+  $("#logo").css("border-color", "yellow");
+  $("#logo").css("cursor", "pointer");
   audio.loop = true;
   audio.play();
 };
 // handleSiteBtnExit is called when a user exits the turntable image without clicking the image
 //!!!!! This is not starter code !!!!!!
 var handleSiteBtnExit = function() {
-  $("#turntable1-img").css("border-style", "outset");
-  $("#turntable1-img").css("border-color", "#218796");
+  $("#logo").css("border-style", "outset");
+  $("#logo").css("border-color", "#218796");
   audio.pause();
 };
 
