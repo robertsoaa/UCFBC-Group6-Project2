@@ -1,9 +1,7 @@
-
 // var express = require('express');
 // var app = express();
 var models = require('../models');
 // console.log(models);
-
 module.exports = { seeddb: models.inventory.bulkCreate([
     {
         genre: 'Rock',
