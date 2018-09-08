@@ -21,7 +21,7 @@
     "username": "os9wigqc1r2ujkuw",
     "password": "p4s068f9kw3ffwo8",
     "port": 3306,
-    "database": "vinylrecords_db",
+    "database": "bc8bggp1pbgimzx1",
     "host": "mysql://os9wigqc1r2ujkuw:p4s068f9kw3ffwo8@bmsyhziszmhf61g1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/bc8bggp1pbgimzx1",
     "operatorsAliases": false
   }
