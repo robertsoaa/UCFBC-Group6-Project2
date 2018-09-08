@@ -3,7 +3,7 @@ body {
   margin: -10;
   padding: 0;
   font-family: "Boecklins Universe", "Helvetica Neue", Helvetica, sans-serif;
-  /* background-image: url("/img/vinyl_collage.jpg") */
+  background-image: url("/img/vinyl_collage.jpg");
   background-color: black;
 }
 #title {color: #fff;
@@ -19,7 +19,7 @@ body {
   
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   box-sizing: border-box;
   width: 100%;
@@ -113,8 +113,9 @@ td{
 
 .updateStock{
 color: black;
+}
 
-#logo{
+#logo {
   width: 40%;
 
 }
